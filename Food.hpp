@@ -13,6 +13,12 @@
 #include "BKTransform.hpp"
 #include <vector>
 #include <iostream>
+#include <random>
+#include <ctime>
+
+#define FOOD_SPEED .5
+#define EATING_DIST 4
+#define POPULATION 100
 using namespace std;
 
 const double elementary_radius = 5;
