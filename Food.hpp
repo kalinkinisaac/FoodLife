@@ -10,12 +10,13 @@
 #define Food_hpp
 
 #include <stdio.h>
-#include "BKTransform.hpp"
+//#include "BKTransform.hpp"
 #include <vector>
 #include <iostream>
 #include <random>
 #include <ctime>
 #include <cmath>
+#include <SFML/Graphics.hpp>
 #define FOOD_SPEED .5
 #define EATING_DIST 4
 #define POPULATION 100
@@ -139,6 +140,14 @@ struct obj {
                 res = i;
         res_a = res / G.data[0] * 2 * M_PI;
         pos = pos + (vect(cos(res_a) * FOOD_SPEED, sin(res_a) * FOOD_SPEED));
+    }
+    void Render(sf::RenderWindow& window)
+    {
+        sf::CircleShape shape;
+        shape.setRadius(pow(this->weight, 3));
+        shape.setFillColor(sf::Color::White);
+        shape.setPosition( 200, 200);
+        window.draw(shape);
     }
 };
 #endif /* Food_hpp */
